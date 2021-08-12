@@ -17,7 +17,11 @@ const useStyles = makeStyles({
     maxWidth: 275,
   },
   background:{
-    backgroundImage: 'url(https:"//images.pexels.com/photos/1059979/pexels-photo-1059979.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")'
+    backgroundImage:
+    'url(' +
+    'https://images.pexels.com/photos/1059979/pexels-photo-1059979.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' +
+    ')',
+
   },
   day: {
     padding: '15px',
@@ -86,7 +90,7 @@ export default function App() {
   }
 
   const Weather = ({weatherData}) => (
-  <Grid>  
+  <Grid className={classes.background}>  
     <Card variant="outlined" style={{width: '700px', borderRadius: '15px', backgroundColor: '#01579b'}}>
       <CardContent >
 
