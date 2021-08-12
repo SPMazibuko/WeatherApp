@@ -21,7 +21,9 @@ const useStyles = makeStyles({
     'url(' +
     'https://images.pexels.com/photos/1059979/pexels-photo-1059979.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' +
     ')',
-
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    height: '650px',
   },
   day: {
     padding: '15px',
@@ -90,10 +92,11 @@ export default function App() {
   }
 
   const Weather = ({weatherData}) => (
-  <Grid className={classes.background}>  
-    <Card variant="outlined" style={{width: '700px', borderRadius: '15px', backgroundColor: '#01579b'}}>
+  <Grid className={classes.background}> 
+  <div style={{padding:'100px', paddingLeft:'300px'}}> 
+    <Card variant="outlined" style={{width: '700px', borderRadius: '15px', backgroundColor: '#01579b',}}>
       <CardContent >
-
+      
       <CardHeader title={weatherData.name} style={{backgroundColor: '#424242',color: 'whitesmoke',padding: '10px',fontSize: '28px',borderRadius: '15px',fontFamily: 'Recursive sans-serif'}}
       action ={<IconButton aria-label="settings"><RefreshRoundedIcon className={classes.button} inverted color='blue' circular icon='refresh' onClick={refresh} /> </IconButton>} />
  
@@ -114,6 +117,7 @@ export default function App() {
 
       </CardContent>
     </Card>
+    </div>
     </Grid>
   )
 
