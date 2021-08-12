@@ -86,75 +86,15 @@ export default function App() {
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [data, setData] = useState([]);
-  const [user, setUser] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [PasswordError, setPasswordError] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   
-  const history = useHistory();
-
-  const clearInputs = () => {
-    setEmail('');
-    setPassword('');
-  };
-
-  const clearErrors = () => {
-    setEmailError('');
-    setPasswordError('');
-  };
-
-  const handleSignUp = e => {
-    clearErrors();
-    e.preventDefault();
-    if (password !== confirmPassword || password === '') {
-      return setPasswordError('Passwords do not match/password not entered');
-    } else if (email === '') {
-      return setEmailError('Email is required');
-    }
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .catch(err => {
-        switch (err.code) {
-          case 'auth/email-already-in-use':
-          case 'auth/invalid-email':
-            setEmailError(err.message);
-            break;
-          case 'auth/weak-password':
-            setPasswordError(err.message);
-            break;
-        }
-      })
-      .then(history.push('/todolist'));
-  };
-
-  const authListener = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        clearInputs();
-        setUser(user);
-      } else {
-        setUser('');
-      }
-    });
-  };
-
-  useEffect(() => {
-    authListener();
-  }, []);
   const refresh = () => {
     window.location.reload();
   }
 
-
-
   const Weather = ({weatherData}) => (
   <Grid className={classes.background}> 
   <div style={{padding:'100px', paddingLeft:'300px'}}> 
-  <Typography variant="h1" style={{paddingLeft:'10px', color:'#FFFFFF' }}>Welome</Typography>
+  <Typography variant="h1" style={{padding:'10px', color:'#FFFFFF'}}>Welcome</Typography>
     <Card variant="outlined" style={{width: '700px', borderRadius: '15px', backgroundColor: '#496c91',}}>
       <CardContent >
       <CardHeader title={weatherData.name} style={{backgroundColor: '#4d9e91',color: 'whitesmoke',padding: '10px',fontSize: '28px',borderRadius: '15px',fontFamily: 'Recursive sans-serif'}}
