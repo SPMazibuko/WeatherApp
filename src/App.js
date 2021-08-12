@@ -24,6 +24,8 @@ const useStyles = makeStyles({
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '650px',
+    width: '1400px',
+    position: 'fixed'
   },
   day: {
     padding: '15px',
@@ -93,8 +95,8 @@ export default function App() {
 
   const Weather = ({weatherData}) => (
   <Grid className={classes.background}> 
-  <div style={{padding:'100px', paddingLeft:'300px'}}> 
-  <Typography variant="h1" style={{padding:'10px', color:'#FFFFFF'}}>Welcome</Typography>
+  <div style={{padding:'90px', paddingLeft:'300px'}}> 
+  <Typography variant="h2" style={{padding:'10px', color:'#FFFFFF'}}>Current Conditions: </Typography>
     <Card variant="outlined" style={{width: '700px', borderRadius: '15px', backgroundColor: '#496c91',}}>
       <CardContent >
       <CardHeader title={weatherData.name} style={{backgroundColor: '#4d9e91',color: 'whitesmoke',padding: '10px',fontSize: '28px',borderRadius: '15px',fontFamily: 'Recursive sans-serif'}}
