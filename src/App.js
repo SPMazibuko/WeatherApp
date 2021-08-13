@@ -208,7 +208,7 @@ function Signup() {
   return (
     <Grid container spacing={0} style={{ position: 'fixed',}} align="center">
       <div style={{ position: 'fixed',background: 'linear-gradient(110deg, #74ABDD 60%, #498DCB 60%)',
-    backgroundSize: 'cover',height: '650px',width: '1300px',}}>
+    backgroundSize: 'cover',height: '650px',width: '1400px',}}>
         <Grid style={{paddingTop:'100px', width:'400px', height:'400px'}}>
         <h2 style={{ overflow: 'visible', whiteSpace: 'pre', fontSize: '46px', letterSpacing: '-2px', color: '#333', lineHeight: '1.1',fontWeight: 700, fontStyle: 'normal', fontFamily: 'Arvo, serif', margin: 0 }}>
                 Create An Account
@@ -312,7 +312,7 @@ function Login() {
   return (
     <Grid container spacing={0}  align="center">
       <div style={{ position: 'fixed',background: 'linear-gradient(110deg, #74ABDD 60%, #498DCB 60%)',
-    backgroundSize: 'cover',height: '650px',width: '1300px',}}>
+    backgroundSize: 'cover',height: '650px',width: '1400px',}}>
         <Grid style={{paddingTop:'100px', width:'400px', height:'400px'}}>
         <h2 style={{ overflow: 'visible', whiteSpace: 'pre', fontSize: '46px', letterSpacing: '-2px', color: '#333', lineHeight: '1.1',fontWeight: 700, fontStyle: 'normal', fontFamily: 'Arvo, serif', margin: 0 }}>
         Welcome Back
