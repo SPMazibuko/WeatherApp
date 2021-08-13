@@ -226,10 +226,11 @@ function Signup() {
           <TextField margin="normal" required fullWidth name="password" type="password" placeholder="Create Password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
                 
 
-          <TextField margin="normal" required fullWidth name="password" placeholder="Confirm Password" type="password" id="password" onChange={e => setConfirmPassword(e.target.value)}/>
+          <TextField margin="normal" required fullWidth name="password" placeholder="Confirm Password" type="password" id="password" onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword}/>
           <p className="errorMsg">{PasswordError}</p>
+
           <FormControlLabel control={ <Checkbox name="checkedB" color="primary" fullWidth variant="contained"/> } label="Accept Terms & Conditions" />
-          <Button type="submit" color="primary" variant="contained" className={classes.signupButton}   startIcon={<ExitToAppRoundedIcon />} fullWidth onClick={handleSignUp} >
+          <Button type="submit" color="primary" variant="contained" className={classes.signupButton}   startIcon={<ExitToAppRoundedIcon />} fullWidth onClick={handleSignUp} disabled={!confirmPassword} >
           SIGN UP
           </Button>
         </form>
@@ -329,7 +330,7 @@ function Login() {
 
           <FormControlLabel control={ <Checkbox name="remember" color="primary" fullWidth variant="contained" /> } label="remember me" />
 
-          <Button type="submit" color="primary" variant="contained" className={classes.signupButton} startIcon={<ExitToAppRoundedIcon />} fullWidth onClick={handleLogin} >SIGN IN</Button>
+          <Button type="submit" color="primary" variant="contained" className={classes.signupButton} startIcon={<ExitToAppRoundedIcon />} fullWidth onClick={handleLogin} disabled={!password}>SIGN IN</Button>
         </form>
          <Grid container>
            <Grid item xs>
