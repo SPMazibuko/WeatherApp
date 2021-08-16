@@ -58,9 +58,13 @@ const useStyles = makeStyles(theme => ({
     ')',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    height: '650px',
-    width: '1400px',
-    position: 'fixed'
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: 'auto',
+    minHeight: '100%',
+    minWidth: '1024px',
   },
   day: {
     padding: '15px',
@@ -104,7 +108,7 @@ description: {
   color: 'whitesmoke',
   fontFamily: 'Recursive sans-serif',
   fontSize: '24px',
-  fontWeight: '600'
+  fontWeight: '600',
 },
 button: {
   width: '35px',
@@ -206,9 +210,11 @@ function Signup() {
   }, []);
 
   return (
+    <div style={{ position: 'fixed',background: 'linear-gradient(110deg, #74ABDD 60%, #498DCB 60%)',
+    backgroundSize: 'cover', top: '0', left: '0',width: '100%',height: 'auto',  minHeight: '100%',
+    minWidth: '1024px',}}>
     <Grid container spacing={0} style={{ position: 'fixed',}} align="center">
-      <div style={{ position: 'fixed',background: 'linear-gradient(110deg, #74ABDD 60%, #498DCB 60%)',
-    backgroundSize: 'cover',height: '650px',width: '1400px',}}>
+        <div style={{align:'center',height: '650px',width: '1400px',}}>
         <Grid style={{paddingTop:'100px', width:'400px', height:'400px'}}>
         <h2 style={{ overflow: 'visible', whiteSpace: 'pre', fontSize: '46px', letterSpacing: '-2px', color: '#333', lineHeight: '1.1',fontWeight: 700, fontStyle: 'normal', fontFamily: 'Arvo, serif', margin: 0 }}>
                 Create An Account
@@ -218,7 +224,7 @@ function Signup() {
                 Please fill up all fields in this form
         </Typography>
         <form>
-          <TextField  margin="normal" required fullWidth id="nm" placeholder="Enter Your Name" name="name" padding={44} radius={8} value={name} label="Name:" onChange={e => setName(e.target.value)} autoFocus />
+          <TextField  margin="normal" required fullWidth id="nm" placeholder="Enter Your Name" name="name" padding={44} radius={8} value={name} label="Name:" onChange={e => setName(e.target.value)}  />
 
           <TextField  margin="normal" required fullWidth id="email"  radius={8} label="Email Address:" value={email} onChange={e => setEmail(e.target.value)} />
                 <p className="errorMsg">{emailError}</p>
@@ -244,8 +250,9 @@ function Signup() {
                 </Grid>
               </Grid>
         </Grid>
-      </div>
+        </div>
     </Grid>
+    </div>
   );
 }
 //================================================== Login Function =====================================
@@ -310,9 +317,11 @@ function Login() {
   }, []);
 
   return (
+    <div style={{ position: 'fixed',background: 'linear-gradient(110deg, #74ABDD 60%, #498DCB 60%)',
+    backgroundSize: 'cover', top: '0', left: '0',width: '100%',height: 'auto',  minHeight: '100%',
+    minWidth: '1024px',}}>
     <Grid container spacing={0}  align="center">
-      <div style={{ position: 'fixed',background: 'linear-gradient(110deg, #74ABDD 60%, #498DCB 60%)',
-    backgroundSize: 'cover',height: '650px',width: '1400px',}}>
+    <div style={{align:'center',height: '650px',width: '1400px',}}>
         <Grid style={{paddingTop:'100px', width:'400px', height:'400px'}}>
         <h2 style={{ overflow: 'visible', whiteSpace: 'pre', fontSize: '46px', letterSpacing: '-2px', color: '#333', lineHeight: '1.1',fontWeight: 700, fontStyle: 'normal', fontFamily: 'Arvo, serif', margin: 0 }}>
         Welcome Back
@@ -345,8 +354,9 @@ function Login() {
            </Grid>
           </Grid>
         </Grid>
-      </div>
+        </div>
     </Grid>
+    </div>
   );
 }
 
